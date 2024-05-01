@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        title Submit New Video
+    body
+        if message
+            p.success #{message}
+        if error
+            p.error #{error}
+        form(action='/video/new', method='post')
+            div
+                label(for='title') Title:
+                input(type='text', name='title', required=true)
+            div
+                label(for='url') Video URL:
+                input(type='text', name='url', required=true)
+            div
+                button(type='submit') Add Video
