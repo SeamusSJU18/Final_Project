@@ -1,14 +1,14 @@
 link(rel='stylesheet', href='/css/login.css')
 
-form(action='/auth/login', method='post')
-    div
-        label(for='username') Username:
-        input(type='text', name='username', required=true)
-    div
-        label(for='password') Password:
-        input(type='password', name='password', required=true)
-    div
-        button(type='submit') Login
+div.form-container
+    form(action='/auth/login', method='post')
+        div
+            label(for='username') Username:
+            input(type='text', name='username', required=true)
+        div
+            label(for='password') Password:
+            input(type='password', name='password', required=true)
+        div
+            button(type='submit') Login
 
-form(action='/auth/register', method='get')
-    button(type='submit') Register
+    a(href='/auth/register', class='button-link') Register
