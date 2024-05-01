@@ -1,4 +1,6 @@
-const db = require('../db'); 
+const path = require('path');
+const dbConnectionPath = path.join(__dirname, '..', 'data', 'database.json'); // Correct path to your database file
+const db = require('../db')(dbConnectionPath); // Ensure db.js is set up to accept a path and returns the db object
 
 exports.addNewVideo = (req, res) => {
     const { title, url } = req.body;
