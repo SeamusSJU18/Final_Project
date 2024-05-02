@@ -2,27 +2,30 @@ doctype html
 html
     head
         title Dashboard
+        link(rel='stylesheet', href='/css/dashboard.css')
     body
-        h1 Welcome, #{user.name}
+        div.container
+            h1 Welcome!
 
-        // Navigation or filter links
-        a(href='/video/dashboard/all') All Videos
-        a(href='/video/new_Video') New Video
+            // Navigation links
+            div.navigation
+                a(href='/video/dashboard/all') All Videos
+                a(href='/video/new_video') New Video
 
-        // Conditionally display messages
-        if message
-            p.success #{message}
-        if error
-            p.error #{error}
+            // Display messages
+            if message
+                p.message #{message}
+            if error
+                p.error #{error}
 
-        // List videos
-        each video in videos
-            div.video
-                h2 #{video.title}
-                // Assuming videos are hosted somewhere that provides a thumbnail
-                a(href=video.url, target='_blank') 
-                    img(src=video.thumbnailUrl, alt=video.title)
-                // Optionally, include a video player directly in the dashboard
-                video(width='320', controls)
-                    source(src=video.url, type='video/mp4')
-                    | Your browser does not support the video tag.
+            // List videos
+            each video in videos
+                div.video
+                    h2 #{video.title}
+                    // Assuming videos are hosted somewhere that provides a thumbnail
+                    a(href=video.url, target='_blank') 
+                        img(src=video.thumbnailUrl, alt=video.title)
+                    // Optionally, include a video player directly in the dashboard
+                    video(controls)
+                        source(src=video.url, type='video/mp4')
+                        | Your browser does not support the video tag.
