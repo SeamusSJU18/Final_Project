@@ -2,15 +2,17 @@ doctype html
 html
     head
         title Register
+        link(rel='stylesheet', href='/css/login.css')
     body
-        if error
-            p.error #{error}
-        form(action='/auth/register', method='post')
-            div
-                label(for='username') Username:
-                input(type='text', name='username', required=true)
-            div
-                label(for='password') Password:
-                input(type='password', name='password', required=true)
-            div
-                button(type='submit') Register
+        div.form-container
+            if error
+                p.error #{error}
+            form(action='/auth/register', method='post')
+                div
+                    label(for='username') Username:
+                    input(type='text', name='username', required=true)
+                div
+                    label(for='password') Password:
+                    input(type='password', name='password', required=true)
+                div
+                    button(type='submit') Register

@@ -2,7 +2,10 @@ doctype html
 html
     head
         title Account Created
+        link(rel='stylesheet', href='/css/accountCreated.css')
     body
-        h1 Account created successfully!
-        p Your account with username #{username} has been created.
-        a(href='/auth/login') Click here to login
+        div.page-container
+            h1 Account created successfully!
+            div.form-container
+                p Your account with username #{username} has been created.
+                a(href='/auth/login') Click here to login
